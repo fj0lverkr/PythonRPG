@@ -14,4 +14,3 @@ class Player:
             self.stats["charisma"] = 3
             self.stats["agility"] = 2
             self.stats["luck"] = 5
-
