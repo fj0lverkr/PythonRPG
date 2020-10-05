@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+    <params>
+        <param name="entry" val="A1"/>
+    </params>
+    <cells>
+        <cell id="A1" return_to_cell="false" encounter_chance="0">
+            <intro>
+                You are in a cold, dark cell. It was labeled "A1". This is where this sample game starts.
+                There should be a lot more text here to introduce the game and such, but as this is just a sample we'll leave it at this.
+            </intro>
+            <actions>
+                <action name="exit" type="game_exit" target="self">
+                    <alias name="quit" />
+                    <alias name="quit game" />
+                    <alias name="exit game" />
+                </action>
+            </actions>
+        </cell>
+        <!-- <cell id="A2" /> -->
+    </cells>
+</game>
