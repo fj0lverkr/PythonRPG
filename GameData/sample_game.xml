@@ -9,6 +9,63 @@
                 You are in a cold, dark cell. It was labeled "A1". This is where this sample game starts.
                 There should be a lot more text here to introduce the game and such, but as this is just a sample we'll leave it at this.
             </intro>
+            <prompt>
+                What will you do now?
+            </prompt>
+            <actions>
+                <action name="exit" type="game_exit" target="self">
+                    <alias name="quit" />
+                    <alias name="quit game" />
+                    <alias name="exit game" />
+                </action>
+                <action name="continue" type="goto_cell" target="A2">
+                    <alias name="next" />
+                </action>
+            </actions>
+        </cell>
+        <cell id="A2">
+            <intro>
+                Now you're in a new cell! This one has some nice ASCII art.
+                |\=========================================================\
+                ||                                                         |
+                ||        _        __        ___        __        _        |
+                ||       ; `-.__.-'. `-.__.-'. .`-.__.-' .`-.__.-' :       |
+                ||     _.'. . . . . . . . .,,,,,,,. . . . . . . . .`._     |
+                ||   .'. . . . . . . . ,a@@@@@@@@@@@a, . . . . . . . .`.   |
+                ||   `. . . . ,a@@@@@a@@@a@@@@@@@@@a@@@a@@@@@a, . . . ,'   |
+                ||     ) . . a@@@@@@a@@@@@a@@@@@@@a@@@@@a@@@@@@a . . (     |
+                ||   ,' . . .@@@%%%a@@@@@@@@@@@@@@@@@@@@@a%%%@@@  . . `.   |
+                ||   `.. . . @@@%%a@@@@@@""@@@@@@@""@@@@@@a%%@@@ . . .,'   |
+                ||     ). . . "@@a@@@@@@@@@SSSSSSS@@@@@@@@@a@@" . . .(     |
+                ||   ,'. . . . . `@@@@@@@@SSS, ,SSS@@@@@@@@' . . . . .`.   |
+                ||   `. . . . . . `@@@@@@@`SSS:SSS'@@@@@@@' . . . . . ,'   |
+                ||     ) . . . . . `@@@@@@@sssssss@@@@@@@' . . . . . (     |
+                ||   ,' . . . . . ,a@@a@@@@@@@@@@@@@@@a@@a, . . . . . `.   |
+                ||   `.. . . . .a@@@a@@@@@a@@@a@@@a@@@@@a@@@a. . . . .,'   |
+                ||     ). . . .a@@@@@a@@@@@@@@@@@@@@@@@a@@@@@a. . . .(     |
+                ||   ,'. . . . @@@@@@a@@@@'   "   `@@@@a@@@@@@ . . . .`.   |
+                ||   `. . . . .@@@@@@@aaaa,       ,aaaa@@@@@@@  . . . ,'   |
+                ||     ) . . . `@@@@@@@@@@@@a, ,a@@@@@@@@@@@@' . . . (     |
+                ||   ,' . . . . .`@@@@@@@@@@a@a@a@@@@@@@@@@'. . . . . `.   |
+                ||   `;;;;;;;;;;;;aaaaaaaaaa@@@@@aaaaaaaaaa;;;;;;;;;;;;'   |
+                ||     );;;;;;;,mMMMMMMMm@@@@@@@@@@@mMMMMMMMm,;;;;;;;(     |
+                ||   ,;;;;;;;;a@%#%%#%%#%Mm@@@@@@@mM%#%%#%%#%@a;;;;;;;;,   |
+                ||   `;;;;;;;;@@%%%%%%%%%%M@@";"@@M%%%%%%%%%%@@;;;;;;;;'   |
+                ||     );;;;;;`@a%%%%%%%%mM";;;;;"Mm%%%%%%%%a@';;;;;;(     |
+                ||   ,;;;;;;;;;;"@@@@@@@@";;;;;;;;;"@@@@@@@@";;;;;;;;;;,   |
+                ||   `;;;;;;;;;;;;"""""";;;;;;;;;;;;;"""""";;;;;;;;;;;;'   |
+                ||     );;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-Catalyst(     |
+                ||     `:;;;:-~~~-:;;:-~~~-:;;;;;:-~~~-:;;:,-~~~-:;;;:'    |
+                ||       ~~~       ~~        ~~~        ~~        ~~~      |
+                ||                     .=============.                     |
+                ||                     |   Mr. Bear  :                     |
+                ||                     `-------------'                     |
+                \|_________________________________________________________|
+
+            </intro>
+            <prompt>
+                What will you do after this?
+            </prompt>
             <actions>
                 <action name="exit" type="game_exit" target="self">
                     <alias name="quit" />
@@ -17,6 +74,5 @@
                 </action>
             </actions>
         </cell>
-        <!-- <cell id="A2" /> -->
     </cells>
 </game>
