@@ -69,6 +69,7 @@ class GameCell:
             print("\nExiting game by player request...")
             exit()
         elif actiontype == "goto_cell" and target in self.game.cells:
+            clear_scene()
             self.game.goto_cell(target)
 
 
