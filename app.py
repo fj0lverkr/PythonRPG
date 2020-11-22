@@ -4,7 +4,6 @@ from GameTools.Game import Game
 
 d20 = GameDice(20)
 you = Player("Nils", "Human", 33, "M", last_name="Nahooy")
-print(you)
 you.add_stat_point("strength", points=5)
 you.show_stats()
 

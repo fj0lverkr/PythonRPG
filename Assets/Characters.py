@@ -1,4 +1,5 @@
-from texttable import Texttable
+from rich.table import Table
+from rich.console import Console
 
 
 class Character:
@@ -21,15 +22,24 @@ class Character:
         self.stamina = 1
 
     def show_stats(self):
-        stats_table = Texttable()
-        stats_table.set_deco(Texttable.HEADER)
-        stats_table.set_cols_dtype(["t", "t", "i", "i", "i", "i", "i", "i",]) 
-        stats_table.set_cols_align(["r", "r", "r", "r", "r", "r", "r", "r"])
-        stats_table.add_rows([["Health", "Stamina", "Strength", "Wits", "Charisma", "Agility", "Luck", "Dexterity"],
-                        [f"{self.health}/{self.max_health}", f"{self.stamina}/{self.max_stamina}",
-                        self.stats["strength"], self.stats["wits"], self.stats["charisma"],
-                        self.stats["agility"], self.stats["luck"], self.stats["dexterity"]]])
-        print(stats_table.draw())
+
+        table = Table(title=self.__str__())
+
+        table.add_column("Health", justify="left", style="red", no_wrap=True)
+        table.add_column("Stamina", justify="left", style="cyan")
+        table.add_column("Strength", justify="right", style="magenta")
+        table.add_column("Wits", justify="right", style="white")
+        table.add_column("Charisma", justify="right", style="green")
+        table.add_column("Agility", justify="right", style="yellow")
+        table.add_column("Luck", justify="right", style="green")
+        table.add_column("Dexterity", justify="right", style="blue")
+
+        table.add_row(f"{self.health}/{self.max_health}", f"{self.stamina}/{self.max_stamina}",
+                        str(self.stats["strength"]), str(self.stats["wits"]), str(self.stats["charisma"]),
+                        str(self.stats["agility"]), str(self.stats["luck"]), str(self.stats["dexterity"]))
+
+        console = Console()
+        console.print(table)
 
 
 class Player(Character):

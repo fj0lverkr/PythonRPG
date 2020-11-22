@@ -1,3 +1,5 @@
+import rich
+from rich import console, print
 from xml.dom import minidom as md
 from os import system, name
 
@@ -10,20 +12,9 @@ def clear_scene():
         _ = system('clear')
 
 
-class ConsoleColors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-
 HELP_STRINGS = ["help", "?", "what do i do?", "help me", "actions", "show actions", "hint", "show hint"]
-HELP_PROMPT = f"{ConsoleColors.OKGREEN}\nThese are the available actions:{ConsoleColors.ENDC}\n"
-ACTION_FAILED = f"{ConsoleColors.FAIL}\nThat didn't work...{ConsoleColors.ENDC}\n"
+HELP_PROMPT = f"\n[green]These are the available actions:[/green]\n"
+ACTION_FAILED = f"\n[italic red]That didn't work...[/italic red]\n"
 EXIT_GAME_MESSAGE = "\nExiting game by player request..."
 
 class GameCell:
@@ -72,7 +63,7 @@ class GameCell:
                         actions += f"{a['name']}, "
                     else:
                         actions += a["name"]
-                print(ConsoleColors.OKGREEN + actions + ConsoleColors.ENDC)
+                print(f"[green]{actions}[green]")
                 self.run_cell()
             else:
                 for a in self.actions:
